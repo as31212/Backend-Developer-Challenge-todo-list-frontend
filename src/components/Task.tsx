@@ -23,7 +23,7 @@ const Task: React.FC<taskInterface> = ({ title, status, _id }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    editTask("http://localhost:8881/task/edit", _id, userData.token, formTitle);
+    editTask("https://backend-developer-challenge-todo-backend.onrender.com:8881/task/edit", _id, userData.token, formTitle);
     setEdit(false);
   };
 
@@ -31,7 +31,7 @@ const Task: React.FC<taskInterface> = ({ title, status, _id }) => {
     const newStatus = stateStatus === "complete" ? "incomplete" : "complete"; // Calculate the new status
     setStateStatus(newStatus); // Update the state
     editStatus(
-      "http://localhost:8881/task/status-change",
+      "https://backend-developer-challenge-todo-backend.onrender.com:8881/task/status-change",
       _id,
       userData.token,
       newStatus

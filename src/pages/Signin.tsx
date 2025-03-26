@@ -2,7 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useLogin } from "../hooks/useLogin";
 import { useSelector } from "react-redux";
 import { storeInterface } from "../interfaces/storeInterface";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { signinFormDataInterface } from "../interfaces/signinFormDataInterface";
 import { useSignin } from "../hooks/useSignin";
 
@@ -44,7 +44,7 @@ useEffect(()=>{
   
     const handleSubmit = (e: React.FormEvent) => {
       e.preventDefault();
-      signinUser("http://localhost:8881/auth/sign-in",formData)
+      signinUser("https://backend-developer-challenge-todo-backend.onrender.com/auth/sign-in",formData)
       console.log('Form submitted');
     };
   
@@ -55,15 +55,26 @@ useEffect(()=>{
             Create a new account
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
-            <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-              register for a new account
-            </a>
-          </p>
+            Or{" "}
+            <Link 
+              to="/"
+              className="font-medium text-blue-600 hover:text-blue-500"
+            >
+              login to your account
+            </Link>
+            </p>
         </div>
+        
   
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+          
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+             {/* Disclaimer */}
+          <p className="text-sm text-gray-500 mb-4">
+            Note: Since this application uses Render as a cloud service, the
+            server may require a cold start, which can take up to 1 minute.
+            Please be patient.
+          </p>
             <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
                 

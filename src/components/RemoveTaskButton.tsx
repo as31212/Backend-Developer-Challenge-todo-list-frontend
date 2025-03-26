@@ -14,7 +14,7 @@ export const RemoveTaskButton:React.FC<RemoveTaskButtonProps> = ({taskId})=>{
 
     return(
         <>
-        <FaRegTrashAlt onClick={()=>deleteTask("http://localhost:8881/task/delete",taskId,userData.token)} className="text-red-500 hover:text-red-700" />
+        <FaRegTrashAlt onClick={()=>deleteTask("https://backend-developer-challenge-todo-backend.onrender.com:8881/task/delete",taskId,userData.token)} className="text-red-500 hover:text-red-700" />
         </>
     );
 }
