@@ -48,22 +48,7 @@ const Home: React.FC = () => {
             {error && <p className="text-red-400">{error}</p>}
           </div>
 
-          {/* Footer */}
-          <div className="px-6 py-4 bg-gray-50 flex justify-between items-center text-sm text-gray-500">
-            <span>{tasks.length} items</span>
-            <div className="space-x-2">
-              <button className="px-3 py-1 rounded bg-blue-500 text-white">
-                All
-              </button>
-              <button className="px-3 py-1 rounded hover:bg-gray-200">
-                Active
-              </button>
-              <button className="px-3 py-1 rounded hover:bg-gray-200">
-                Completed
-              </button>
-            </div>
-            <button className="hover:underline">Clear completed</button>
-          </div>
+          
         </div>
       </div>
     </>
