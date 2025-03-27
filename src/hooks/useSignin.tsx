@@ -12,6 +12,7 @@ export const useSignin = () => {
 
   const signinUser = async (url: string, userData: signinFormDataInterface) => {
     setLoading(true);
+    setError(null);
     try {
       const request = await fetch(url, {
         method: "POST",

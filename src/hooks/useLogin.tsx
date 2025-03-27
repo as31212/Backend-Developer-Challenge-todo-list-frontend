@@ -12,6 +12,7 @@ export const useLogin = () => {
 
   const loginUser = async (url: string, userData: loginFormDataInterface) => {
     setLoading(true);
+    setError(null);
     try {
       const request = await fetch(url, {
         method: "POST",
